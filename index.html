@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designs By Rudra - Photography Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="logo white.png" alt="Rudra Logo" class="logo">
+            <h1>DESIGNS BY Rudra</h1>
+        </div>
+    </div>
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        </nav>
+    </header>
+    
+    
+
+    <section id="home" class="hero">
+        <h2></h2>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>At DESIGNS BY RUDRA, we are passionate about helping your brand shine. We offer a range of services, including Digital Marketing, where we craft strategies that drive online growth and engagement. Our Event & Corporate Photography captures the essence of your events with professionalism and style, ensuring every moment is documented flawlessly.
+               For those special occasions, our Wedding Photography services are designed to preserve your most cherished memories in timeless images. We also excel in Branding & Media Production, where we create compelling visuals and media that tell your brand’s story and set you apart.
+                
+                Our mission is simple: to deliver exceptional results that reflect your vision and exceed your expectations.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service-item" id="service1">
+                <img src="wed.jpg" alt="Wedding Photography">
+                <div class="overlay">
+                    <h3>Wedding Photography</h3>
+                    <p>Capture your special moments with our professional wedding photography services.</p>
+                </div>
+            </div>
+            <div class="service-item" id="service2">
+                <img src="potrait.jpg" alt="Potrait Photography">
+                <div class="overlay">
+                    <h3>Potrait Photography</h3>
+                    <p>Enhance your business image with our expert corporate photography.</p>
+                </div>
+            </div>
+            <div class="service-item" id="service3">
+                <img src="event.jpg" alt="Event Photography">
+                <div class="overlay">
+                    <h3>Event Photography</h3>
+                    <p>Make your events unforgettable with our high-quality event photography.</p>
+                </div>
+            </div>
+            <div class="service-item branding-media" id="service4">
+                <img src="digital marketing.jpg" alt="Digital Marketing">
+                <div class="overlay">
+                    <h3>Digital Marketing</h3>
+                    <p>Boost your online presence with our comprehensive digital marketing services.</p>
+                </div>
+            </div>
+            <div class="service-item branding-media" id="service5">
+                <img src="branding.jpg" alt="Branding">
+                <div class="overlay">
+                    <h3>Branding</h3>
+                    <p>Establish a strong brand identity with our creative branding solutions.</p>
+                </div>
+            </div>
+            <div class="service-item branding-media" id="service6">
+                <img src="media prod.jpg" alt="Media Production">
+                <div class="overlay">
+                    <h3>Media Production</h3>
+                    <p>Bring your ideas to life with our professional media production services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have any questions or want to work with us? Reach out through the form below.</p>
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Designs By Rudra. All rights reserved.</p>
+        <div class="social-icons">
+           
+            <a href="https://www.instagram.com/designsby_rudra" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/yourprofile" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <a href="mailto:info@designsbyrudra.com" class="email-link">info@designsbyrudra</a>
+    </footer>
+    
+
+    <script>
+   document.addEventListener('DOMContentLoaded', () => {
+    emailjs.init("6W-dpuRWLajDuaMYT");  // Replace "YOUR_USER_ID" with your EmailJS user ID
+
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Send form data to EmailJS
+        emailjs.sendForm('service_q6vbohr', 'template_8jnbg2i', this)
+            .then(function() {
+                alert('Thank you for reaching out! We\'ll get back to you soon.');
+                form.reset();  // Reset the form after submission
+            }, function(error) {
+                alert('Sorry, there was an error sending your message. Please try again later.');
+                console.log('Failed to send email:', error);
+            });
+    });
+});// JavaScript for Smooth Scrolling
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        window.scrollTo({
+            top: targetElement.offsetTop - 70, // Adjust 70 to match header height if needed
+            behavior: 'smooth'
+        });
+    });
+});
+// Optional: Close menu when clicking a link (for single-page websites)
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});// JavaScript to toggle the hamburger menu
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('active');
+});
+
+
+
+
+    </script>
+    
+</body>
+</html>
